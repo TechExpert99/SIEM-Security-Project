@@ -1,0 +1,11 @@
+SMB                      192.168.128.162 445    NAYAK_RO         [*] Windows 11 / Server 2025 Build 26100 x64 (name:NAYAK_RO) (domain:Nayak_RO) (signing:True) (SMBv1:False)
+SMB                      192.168.128.162 445    NAYAK_RO         [-] Connection Error: The NETBIOS connection with the remote host timed out.
+SMB                      192.168.128.162 445    NAYAK_RO         [-] Connection Error: The NETBIOS connection with the remote host timed out.
+SMB                      192.168.128.162 445    NAYAK_RO         [-] Connection Error: The NETBIOS connection with the remote host timed out.
+SMB                      192.168.128.162 445    NAYAK_RO         [-] Connection Error: The NETBIOS connection with the remote host timed out.
+SMB                      192.168.128.162 445    NAYAK_RO         [-] Nayak_RO\administrator:administrator STATUS_LOGON_FAILURE 
+SMB                      192.168.128.162 445    NAYAK_RO         [-] Connection Error: The NETBIOS connection with the remote host timed out.
+SMB                      192.168.128.162 445    NAYAK_RO         [-] Connection Error: The NETBIOS connection with the remote host timed out.
+SMB                      192.168.128.162 445    NAYAK_RO         [-] Connection Error: The NETBIOS connection with the remote host timed out.
+SMB                      192.168.128.162 445    NAYAK_RO         [-] Connection Error: The NETBIOS connection with the remote host timed out.
+SMB                      192.168.128.162 445    NAYAK_RO         [+] Nayak_RO\administrator:2020 (Pwn3d!)

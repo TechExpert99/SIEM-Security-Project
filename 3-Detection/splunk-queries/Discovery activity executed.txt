@@ -1,0 +1,101 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.06.25",
+  "_id": "umj4_Z4B-SmZWk_tNPVh",
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.128.162",
+      "name": "Nayak_RO",
+      "id": "002"
+    },
+    "manager": {
+      "name": "nayak-VMware-Virtual-Platform"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "originalFileName": "net1.exe",
+          "image": "C:\\\\Windows\\\\System32\\\\net1.exe",
+          "product": "Microsoft® Windows® Operating System",
+          "parentProcessGuid": "{e1ca0067-eb90-6a3c-2808-000000004200}",
+          "description": "Net Command",
+          "logonGuid": "{e1ca0067-c159-6a3c-073e-050000000000}",
+          "parentCommandLine": "net  localgroup administrators",
+          "processGuid": "{e1ca0067-eb90-6a3c-2908-000000004200}",
+          "logonId": "0x53e07",
+          "parentProcessId": "548",
+          "processId": "1680",
+          "currentDirectory": "C:\\\\Windows\\\\System32\\\\",
+          "utcTime": "2026-06-25 08:49:20.345",
+          "hashes": "MD5=158DB954503C803C0840DD424FB608F8,SHA256=8489DB35375D890314EB8F7CD9E0CBD3866475F4E252865F00F649B0A02FD757,IMPHASH=98A56655C7E54BCE7F55B3F01AB5B07E",
+          "parentImage": "C:\\\\Windows\\\\System32\\\\net.exe",
+          "company": "Microsoft Corporation",
+          "commandLine": "C:\\\\WINDOWS\\\\system32\\\\net1  localgroup administrators",
+          "integrityLevel": "High",
+          "fileVersion": "10.0.26100.7019 (WinBuild.160101.0800)",
+          "user": "Nayak_RO\\\\nayak",
+          "terminalSessionId": "1",
+          "parentUser": "Nayak_RO\\\\nayak"
+        },
+        "system": {
+          "eventID": "1",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Process Create:\r\nRuleName: -\r\nUtcTime: 2026-06-25 08:49:20.345\r\nProcessGuid: {e1ca0067-eb90-6a3c-2908-000000004200}\r\nProcessId: 1680\r\nImage: C:\\Windows\\System32\\net1.exe\r\nFileVersion: 10.0.26100.7019 (WinBuild.160101.0800)\r\nDescription: Net Command\r\nProduct: Microsoft® Windows® Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: net1.exe\r\nCommandLine: C:\\WINDOWS\\system32\\net1  localgroup administrators\r\nCurrentDirectory: C:\\Windows\\System32\\\r\nUser: Nayak_RO\\nayak\r\nLogonGuid: {e1ca0067-c159-6a3c-073e-050000000000}\r\nLogonId: 0x53E07\r\nTerminalSessionId: 1\r\nIntegrityLevel: High\r\nHashes: MD5=158DB954503C803C0840DD424FB608F8,SHA256=8489DB35375D890314EB8F7CD9E0CBD3866475F4E252865F00F649B0A02FD757,IMPHASH=98A56655C7E54BCE7F55B3F01AB5B07E\r\nParentProcessGuid: {e1ca0067-eb90-6a3c-2808-000000004200}\r\nParentProcessId: 548\r\nParentImage: C:\\Windows\\System32\\net.exe\r\nParentCommandLine: net  localgroup administrators\r\nParentUser: Nayak_RO\\nayak\"",
+          "version": "5",
+          "systemTime": "2026-06-25T08:49:20.3486146Z",
+          "eventRecordID": "39383",
+          "threadID": "4956",
+          "computer": "Nayak_RO",
+          "task": "1",
+          "processID": "3480",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 3,
+      "mail": false,
+      "level": 3,
+      "description": "Discovery activity executed",
+      "groups": [
+        "sysmon",
+        "sysmon_eid1_detections",
+        "windows"
+      ],
+      "mitre": {
+        "technique": [
+          "Account Discovery"
+        ],
+        "id": [
+          "T1087"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      },
+      "id": "92031"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1782377359.1356994",
+    "timestamp": "2026-06-25T14:19:19.647+0530"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-06-25T08:49:19.647Z"
+    ]
+  },
+  "sort": [
+    1782377359647
+  ]
+}

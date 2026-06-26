@@ -1,0 +1,31 @@
+# Nmap 7.99 scan initiated Thu Jun 25 02:25:17 2026 as: /usr/lib/nmap/nmap -A -oN nmap-aggressive-scan.txt 192.168.128.162
+Nmap scan report for 192.168.128.162
+Host is up (0.00083s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT    STATE SERVICE       VERSION
+135/tcp open  msrpc         Microsoft Windows RPC
+139/tcp open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp open  microsoft-ds?
+MAC Address: 00:0C:29:9D:B7:AC (VMware)
+Device type: general purpose
+Running: Microsoft Windows 11
+OS CPE: cpe:/o:microsoft:windows_11
+OS details: Microsoft Windows 11 24H2
+Network Distance: 1 hop
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-06-25T06:25:45
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+|_nbstat: NetBIOS name: NAYAK_RO, NetBIOS user: <unknown>, NetBIOS MAC: 00:0c:29:9d:b7:ac (VMware)
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.83 ms 192.168.128.162
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Jun 25 02:25:49 2026 -- 1 IP address (1 host up) scanned in 31.68 seconds

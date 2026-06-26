@@ -1,0 +1,40 @@
+## ============================================
+## Splunk SPL Queries — Nmap Reconnaissance
+## Attack: Nmap scan from 192.168.128.164
+## Date: 2026-06-25
+## ============================================
+
+## Query 1 — All EventCode 3 (Network Connections) with parsed fields
+index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational"
+| rex field=_raw "<EventID>(?<EventCode>\d+)</EventID>"
+| rex field=_raw "<Data Name='SourceIp'>(?<SourceIp>[^<]+)</Data>"
+| rex field=_raw "<Data Name='DestinationIp'>(?<DestinationIp>[^<]+)</Data>"
+| rex field=_raw "<Data Name='DestinationPort'>(?<DestinationPort>[^<]+)</Data>"
+| rex field=_raw "<Data Name='Image'>(?<Image>[^<]+)</Data>"
+| search EventCode=3
+| table _time, host, Image, SourceIp, DestinationIp, DestinationPort
+| sort _time
+
+## Query 2 — Port scan detection (many ports hit in short time)
+index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational"
+| rex field=_raw "<EventID>(?<EventCode>\d+)</EventID>"
+| rex field=_raw "<Data Name='SourceIp'>(?<SourceIp>[^<]+)</Data>"
+| rex field=_raw "<Data Name='DestinationPort'>(?<DestinationPort>[^<]+)</Data>"
+| search EventCode=3
+| bin _time span=1m
+| stats dc(DestinationPort) as unique_ports, count by _time, SourceIp
+| where unique_ports > 10
+| sort -unique_ports
+
+## Query 3 — Connections from Kali specifically
+index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational"
+| rex field=_raw "<Data Name='SourceIp'>(?<SourceIp>[^<]+)</Data>"
+| search SourceIp="192.168.128.164"
+| table _time, host, SourceIp
+| sort _time
+
+## Query 4 — Count all EventCodes to see what Sysmon is logging
+index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational"
+| rex field=_raw "<EventID>(?<EventCode>\d+)</EventID>"
+| stats count by EventCode
+| sort -count

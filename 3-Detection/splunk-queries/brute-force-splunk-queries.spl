@@ -1,0 +1,28 @@
+## ============================================
+## Splunk SPL Queries — Brute Force Attack
+## Attack: CrackMapExec SMB from 192.168.128.164
+## Date: 2026-06-25
+## ============================================
+
+## Query 1 — All failed logon events (4625)
+index=main source="WinEventLog:Security" EventCode=4625
+
+## Query 2 — All successful logon events (4624)
+index=main source="WinEventLog:Security" EventCode=4624
+
+## Query 3 — Brute force detection (multiple failures from same IP)
+index=main source="WinEventLog:Security" EventCode=4625
+| stats count by Source_Network_Address, Account_Name
+| where count > 3
+| sort -count
+
+## Query 4 — Combined attack timeline
+index=main source="WinEventLog:Security" (EventCode=4625 OR EventCode=4624)
+| eval Status=if(EventCode=4625,"FAILED","SUCCESS")
+| table _time, ComputerName, Account_Name, Source_Network_Address, Status
+| sort _time
+
+## Query 5 — Successful logon after multiple failures (attack success)
+index=main source="WinEventLog:Security" EventCode=4624
+| where Source_Network_Address="192.168.128.164"
+| table _time, Account_Name, Source_Network_Address, Logon_Type, Authentication_Package
