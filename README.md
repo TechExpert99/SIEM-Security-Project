@@ -458,8 +458,8 @@ Full setup guide: [6-Documentation/setup-guides/](6-Documentation/setup-guides/)
 
 *Aspiring SOC Analyst | Cybersecurity Enthusiast*
 
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github)](https://github.com/YOUR_USERNAME)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/YOUR_LINKEDIN)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github)](https://github.com/TechExpert99)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/nithin-nayak-v-n-99b63625a)
 
 </div>
 
@@ -471,6 +471,6 @@ Full setup guide: [6-Documentation/setup-guides/](6-Documentation/setup-guides/)
 
 *All attacks were performed in an isolated lab environment on personally owned virtual machines for educational purposes only.*
 
-![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=YOUR_USERNAME.SOC-Home-Lab)
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=TechExpert99.SOC-Home-Lab)
 
 </div>
